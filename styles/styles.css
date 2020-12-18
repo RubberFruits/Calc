@@ -25,7 +25,18 @@ body::before{
    height: 100%;
    background: linear-gradient(#e91e63,#ffc107);
    clip-path: circle(22% at 30% 20%);
+   animation:20s linear 0s infinite alternate move_red_circle;
 }
+
+@keyframes move_red_circle{
+   from{
+      clip-path: circle(22% at 30% 20%);
+   }
+   to{
+      clip-path: circle(30% at 70% 20%);
+   }
+}
+
 body::after{
    content: '';
    position: absolute;
@@ -35,7 +46,20 @@ body::after{
    height: 100%;
    background: linear-gradient(#ffffff,#da00ff);
    clip-path: circle(22% at 70% 90%);
+   animation: 10s ease-in 0s infinite alternate scale_purple_circle;
 }
+
+@keyframes scale_purple_circle{
+   from{
+      clip-path: circle(15% at 70% 90%);
+
+   }
+   to{
+      clip-path: circle(30% at 70% 90%);
+   }
+}
+
+
 
 .container{
    position:relative;
@@ -47,8 +71,8 @@ body::after{
    margin-left: 120px;
    z-index: 10;
    backdrop-filter: blur(15px);
-   border-top: 1px solid rgba(255, 255, 255, 0.2);
-   border-left: 1px solid rgba(255, 255, 255, 0.2);
+   border-top: 2px solid rgba(255, 255, 255, 0.2);
+   border-left: 2px solid rgba(255, 255, 255, 0.2);
    box-shadow: 5px 5px 30px rgba(255, 255, 255, 0.05);
 }
 
@@ -96,11 +120,13 @@ body::after{
 .container .calculator .clear {
    grid-column: span 2;
    width: 150px;
+   border: 1px solid white;
 }
 
 .container .calculator .equal{
    grid-column: span 2;
    width: 150px;
+   background-color:rgba(0,0,0,0.3);
 }
 
 
